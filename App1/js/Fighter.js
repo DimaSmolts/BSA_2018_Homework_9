@@ -5,17 +5,22 @@
         this.health = health;
     }
 
-
     SetDamage(damage) {
         this.health = this.health - damage;
-        console.log(`${ this.name } has ${ this.health } health now`)
+        console.log(`${this.name} has ${this.health} health (-${damage})`);
     }
 
     Hit(enemy, point) {
         enemy.SetDamage(point * this.power)
     }
 
-    // later
-    Knockout() { }
+    Knockout() {
+        let myPromise = new Promise((resolve, reject) => {            
+            setTimeout(() => {
+               resolve(`${this.name} is knocked out`)
+            }, 5000);            
+        });
 
+        return myPromise;
+    }
 }
