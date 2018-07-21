@@ -4,4 +4,18 @@
         this.power = power;
         this.health = health;
     }
+
+
+    SetDamage(damage) {
+        this.health = this.health - damage;
+        console.log(`${ this.name } has ${ this.health } health now`)
+    }
+
+    Hit(enemy, point) {
+        enemy.SetDamage(point * this.power)
+    }
+
+    // later
+    Knockout() { }
+
 }
