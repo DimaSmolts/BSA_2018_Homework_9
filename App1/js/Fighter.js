@@ -7,7 +7,7 @@
 
     SetDamage(damage) {
         this.health = this.health - damage;
-        console.log(`${this.name} has ${this.health} health (-${damage})`);
+        console.log(`Hit: ${this.name} has ${this.health} health (-${damage})`);
     }
 
     Hit(enemy, point) {

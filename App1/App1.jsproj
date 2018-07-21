@@ -66,7 +66,6 @@
     <Content Include="images\Square44x44Logo.targetsize-24_altform-unplated.png" />
     <Content Include="images\StoreLogo.png" />
     <Content Include="images\Wide310x150Logo.scale-200.png" />
-    <Content Include="js\Fight.js" />
     <Content Include="js\Fighter.js" />
     <Content Include="js\ImprovedFighter.js" />
     <Content Include="js\main.js" />

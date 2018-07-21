@@ -8,8 +8,12 @@ async function fight(fighter,improvedFighter,...points) {
     while (fighter.health > 0 && improvedFighter.health > 0 && i < points.length) {
 
 
-        fighter.Hit(improvedFighter, points[i]);
-        improvedFighter.DoubleHit(fighter, points[i]);
+        if (i % 2 === 0) {
+            fighter.Hit(improvedFighter, points[i]);
+        }
+        else {
+            improvedFighter.DoubleHit(fighter, points[i]);
+        }       
         i++;
     }
 
@@ -27,7 +31,7 @@ async function fight(fighter,improvedFighter,...points) {
                     .then(successMessage => {
                     console.log("time is over");
                     console.log(successMessage);
-                    console.log("winner is " + Fighter.name);
+                    console.log("winner is " + fighter.name);
                 })
     } else {
         console.log("out of points");
@@ -36,10 +40,10 @@ async function fight(fighter,improvedFighter,...points) {
     console.log("Battle ended");
 }
 
-var f1 = new Fighter("Man", 1, 100);
-var f2 = new ImprovedFighter("God", 2 , 100);
+var f1 = new Fighter("Man", 2, 100);
+var f2 = new ImprovedFighter("God", 1 , 100);
 
 
 console.clear();
 console.log("start");
-fight(f1, f2,14,16,22,22);
+fight(f1, f2,14,16,22,22,15,15);
